@@ -61,6 +61,10 @@ export function buildBot(token: string): ReturnType<typeof createBot> {
     await ctx.reply(HELP_TEXT);
   });
 
+  bot.command("__harness_error__", async () => {
+    throw new Error("Harness error simulation");
+  });
+
   bot.callbackQuery(/^menu:/, async (ctx) => {
     const data = ctx.callbackQuery.data;
 

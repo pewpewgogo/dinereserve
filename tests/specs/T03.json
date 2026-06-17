@@ -30,5 +30,21 @@
         ]
       }
     ]
+  },
+  {
+    "name": "T03: error boundary replies gracefully",
+    "steps": [
+      {
+        "send": { "text": "/__harness_error__" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Something went wrong. Please try again or use /help."
+            }
+          }
+        ]
+      }
+    ]
   }
 ]
